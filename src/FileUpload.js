@@ -85,7 +85,7 @@ function FileUpload() {
       );
 
       setUploadStatus('File uploaded successfully!');
-      await axios.put(`http://localhost:8080/api/users/${jsn.id}`, {
+      await axios.put(`http://3.19.248.251:8080/api/users/${jsn.id}`, {
         filecreatedat: new Date().toISOString()
       }, {
         headers: {

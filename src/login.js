@@ -31,14 +31,14 @@ function Login() {
     try {
       if (isLogin) {
         // Login: Check if user exists
-        const response = await axios.get(`http://ec2-3-19-248-251.us-east-2.compute.amazonaws.com:8080/api/users/username/${formData.username}`);
+        const response = await axios.get(`http://3.19.248.251:8080/api/users/username/${formData.username}`);
         if (response.data) {
           localStorage.setItem('user', JSON.stringify(response.data));
           navigate('/upload');
         }
       } else {
         // Signup: Create new user
-        const response = await axios.post('http://ec2-3-19-248-251.us-east-2.compute.amazonaws.com:8080/api/users', formData);
+        const response = await axios.post('http://3.19.248.251:8080/api/users', formData);
         if (response.data) {
           localStorage.setItem('user', JSON.stringify(response.data));
           navigate('/upload');
